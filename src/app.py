@@ -15,14 +15,14 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-clean_energy_ch_raw = load_data(path="../data/renewable_power_plants_CH.csv")
+clean_energy_ch_raw = load_data(path="./data/renewable_power_plants_CH.csv")
 clean_energy_ch = deepcopy(clean_energy_ch_raw)
 
 # Add title and header
 st.title("Clean Energy Sources in Switzerland")
 st.header("Overview in Switzerland")
 
-with open('../data/georef-switzerland-kanton.geojson') as response:
+with open('./data/georef-switzerland-kanton.geojson') as response:
     cantons = json.load(response)
 
 # Need to find a way to match the canton code from the df with the canton name in the json
